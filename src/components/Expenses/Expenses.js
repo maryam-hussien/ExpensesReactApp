@@ -10,8 +10,8 @@ const Expenses = (props) => {
   const [filteredInfoText, setFilteredInfoText] = useState(
     "2019 , 2021 and 2022"
   );
-  const filteredExpense = props.data.filter((exp) => {
-    return exp.date.getFullYear().toString() === filteredYear;
+  const filteredExpense = props.data?.filter((exp) => {
+    return new Date(exp.date).getFullYear().toString() === filteredYear;
   });
 
   const FilterChangeHandler = (expense) => {
@@ -34,7 +34,7 @@ const Expenses = (props) => {
           selected={filteredYear}
           onFilterChange={FilterChangeHandler}
         />
-        <ExpensesChart expenses={filteredExpense}/>
+        <ExpensesChart expenses={filteredExpense} />
         <ExpensesList items={filteredExpense} />
 
         {/* <p>data for years {filteredInfoText} is hidden</p>

@@ -34,6 +34,18 @@
   padding: 0.5rem;
   border-radius: 12px;
 }
+.expense-item__btns{
+  display: flex;
+  gap: 0.5rem;
+}
+.expense-item__btns button{
+  border-radius: 3px;
+  border: 0;
+}
+.expense-item__btns button :hover{
+  cursor: pointer;
+}
+
 
 @media (min-width: 580px) {
   .expense-item__description {

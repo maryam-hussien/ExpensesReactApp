@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
@@ -12,7 +12,9 @@ const NewExpense = (props) => {
     console.log(ExpenseData);
     props.onAddExpense(ExpenseData);
     setIsEditing(false)
-  };
+  }
+  
+
   const IsEditingHandler = () => {
     setIsEditing(true);
   };
@@ -28,6 +30,7 @@ const NewExpense = (props) => {
         <ExpenseForm
           onSaveExpenseData={SaveExpenseDataHandler}
           edit={StopEditingHandler}
+          
         />
       )}
     </div>
